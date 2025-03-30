@@ -1,0 +1,446 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: comfyui调用(文生图）
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.5@fd6efd37c2a931911de8ab9ca3ba2da303bef146d45ee87ad896b04b36d09403
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/comfyui:0.0.4@8bb424227ceb2fef8f69c3505ab82b34d38a6291e385b482ab67a34c4cf2e656
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1742805904217--1742805945794-target
+      selected: false
+      source: '1742805904217'
+      sourceHandle: source
+      target: '1742805945794'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1742805567912-source-1742809068413-target
+      selected: false
+      source: '1742805567912'
+      sourceHandle: source
+      target: '1742809068413'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: tool
+      id: 1742809068413-source-1742805904217-target
+      selected: false
+      source: '1742809068413'
+      sourceHandle: source
+      target: '1742805904217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: prompt
+          max_length: 48
+          options: []
+          required: true
+          type: paragraph
+          variable: prompt
+      height: 89
+      id: '1742805567912'
+      position:
+        x: 30
+        y: 270.5
+      positionAbsolute:
+        x: 30
+        y: 270.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Image prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            ja_JP: Image prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            pt_BR: Image prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            zh_Hans: 图像提示词，您可以查看 Stable Diffusion 或者 FLUX 的官方文档
+          label:
+            en_US: Prompt
+            ja_JP: Prompt
+            pt_BR: Prompt
+            zh_Hans: 提示词
+          llm_description: Image prompt, you should describe the image you want to
+            generate as a list of words as possible as detailed, the prompt must be
+            written in English.
+          max: null
+          min: null
+          name: positive_prompt
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Negative prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            ja_JP: Negative prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            pt_BR: Negative prompt, you can check the official documentation of Stable
+              Diffusion or FLUX
+            zh_Hans: 负面提示词，您可以查看 Stable Diffusion 或者 FLUX 的官方文档
+          label:
+            en_US: Negative Prompt
+            ja_JP: Negative Prompt
+            pt_BR: Negative Prompt
+            zh_Hans: 负面提示词
+          llm_description: Negative prompt, you should describe the image you don't
+            want to generate as a list of words as possible as detailed, the prompt
+            must be written in English.
+          max: null
+          min: null
+          name: negative_prompt
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The input images
+            ja_JP: The input images
+            pt_BR: The input images
+            zh_Hans: 输入的图片
+          label:
+            en_US: Input Images
+            ja_JP: Input Images
+            pt_BR: Input Images
+            zh_Hans: 输入的图片
+          llm_description: The input images, used to transfer to the comfyui workflow
+            to generate another image.
+          max: null
+          min: null
+          name: images
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: files
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: exported from ComfyUI workflow
+            ja_JP: exported from ComfyUI workflow
+            pt_BR: exported from ComfyUI workflow
+            zh_Hans: 从ComfyUI的工作流中导出
+          label:
+            en_US: Workflow JSON
+            ja_JP: Workflow JSON
+            pt_BR: Workflow JSON
+            zh_Hans: Workflow JSON
+          llm_description: ''
+          max: null
+          min: null
+          name: workflow_json
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: When the workflow has multiple image nodes, enter the ID list of
+              these nodes, and the images will be passed to ComfyUI in the order of
+              the list.
+            ja_JP: When the workflow has multiple image nodes, enter the ID list of
+              these nodes, and the images will be passed to ComfyUI in the order of
+              the list.
+            pt_BR: When the workflow has multiple image nodes, enter the ID list of
+              these nodes, and the images will be passed to ComfyUI in the order of
+              the list.
+            zh_Hans: 当工作流有多个图片节点时，输入这些节点的ID列表，图片将按列表顺序传给ComfyUI
+          label:
+            en_US: Image Node ID List
+            ja_JP: Image Node ID List
+            pt_BR: Image Node ID List
+            zh_Hans: 图片节点ID列表
+          llm_description: ''
+          max: null
+          min: null
+          name: image_ids
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: If you need to generate different images each time, you need to
+              enter the ID of the seed node.
+            ja_JP: If you need to generate different images each time, you need to
+              enter the ID of the seed node.
+            pt_BR: If you need to generate different images each time, you need to
+              enter the ID of the seed node.
+            zh_Hans: 如果需要每次生成时使用不同的种子，需要输入包含种子的节点的ID
+          label:
+            en_US: Seed Node Id
+            ja_JP: Seed Node Id
+            pt_BR: Seed Node Id
+            zh_Hans: 种子节点ID
+          llm_description: ''
+          max: null
+          min: null
+          name: seed_id
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          image_ids: ''
+          images: ''
+          negative_prompt: ''
+          positive_prompt: ''
+          seed_id: ''
+          workflow_json: ''
+        provider_id: langgenius/comfyui/comfyui
+        provider_name: langgenius/comfyui/comfyui
+        provider_type: builtin
+        selected: false
+        title: 工作流
+        tool_configurations:
+          image_ids: null
+          seed_id: null
+          workflow_json: '{     "1": {         "inputs": {             "seed": 1015926551043629,             "steps":
+            30,             "cfg": 8,             "sampler_name": "euler",             "scheduler":
+            "normal",             "denoise": 1,             "model": [                 "2",                 0             ],             "positive":
+            [                 "3",                 0             ],             "negative":
+            [                 "4",                 0             ],             "latent_image":
+            [                 "5",                 0             ]         },         "class_type":
+            "KSampler",         "_meta": {             "title": "K采样器"         }     },     "2":
+            {         "inputs": {             "ckpt_name": "AnythingXL_xl动漫风xl版.safetensors"         },         "class_type":
+            "CheckpointLoaderSimple",         "_meta": {             "title": "Checkpoint加载器(简易)"         }     },     "3":
+            {         "inputs": {             "text": "{positive_prompt}",             "clip":
+            [                 "2",                 1             ]         },         "class_type":
+            "CLIPTextEncode",         "_meta": {             "title": "CLIP文本编码器"         }     },     "4":
+            {         "inputs": {             "text": "",             "clip": [                 "2",                 1             ]         },         "class_type":
+            "CLIPTextEncode",         "_meta": {             "title": "CLIP文本编码器"         }     },     "5":
+            {         "inputs": {             "width": 1024,             "height":
+            1024,             "batch_size": 1         },         "class_type": "EmptyLatentImage",         "_meta":
+            {             "title": "空Latent"         }     },     "6": {         "inputs":
+            {             "samples": [                 "1",                 0             ],             "vae":
+            [                 "2",                 2             ]         },         "class_type":
+            "VAEDecode",         "_meta": {             "title": "VAE解码"         }     },     "7":
+            {         "inputs": {             "images": [                 "6",                 0             ]         },         "class_type":
+            "PreviewImage",         "_meta": {             "title": "预览图像"         }     }
+            }'
+        tool_label: 工作流
+        tool_name: workflow
+        tool_parameters:
+          negative_prompt:
+            type: mixed
+            value: ''
+          positive_prompt:
+            type: mixed
+            value: '{{#1742809068413.text#}}'
+        type: tool
+      height: 141
+      id: '1742805904217'
+      position:
+        x: 638
+        y: 270.5
+      positionAbsolute:
+        x: 638
+        y: 270.5
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1742805904217'
+          - files
+          variable: img
+        - value_selector:
+          - '1742805904217'
+          - text
+          variable: prompt
+        selected: false
+        title: 结束
+        type: end
+      height: 115
+      id: '1742805945794'
+      position:
+        x: 942
+        y: 270.5
+      positionAbsolute:
+        x: 942
+        y: 270.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1742805567912'
+          - prompt
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 597868da-cfea-4a8f-afbd-25890fa1df34
+          role: system
+          text: "```xml\n<instruction>\n你是一个专业的prompt扩写大师，擅长将中文提示词转化为高质量的英文prompt，使其能够直接输入到ComfyUI中实现文生图功能。请按照以下步骤处理用户提供的提示词：\n\
+            \n1. 首先，仔细阅读并理解用户提供的中文提示词，确保准确把握其核心内容和风格要求。\n2. 将中文提示词翻译成流畅、自然的英文，保持原意的同时使其更适合AI图像生成。\n\
+            3. 根据文生图的最佳实践，对prompt进行优化和扩展，包括但不限于：\n   - 添加适当的风格描述（如\"hyper-realistic,\
+            \ 4K, ultra-detailed\"）\n   - 包含光照和环境细节（如\"cinematic lighting, soft shadows\"\
+            ）\n   - 必要时添加艺术风格指示（如\"in the style of Studio Ghibli\"）\n4. 确保最终输出的英文prompt符合以下要求：\n\
+            \   - 长度在50-100个单词之间\n   - 包含主体描述、环境背景、风格细节等关键要素\n   - 使用逗号分隔不同描述要素\n\
+            \   - 不使用任何XML标签\n5. 检查翻译的准确性和prompt的完整性，确保其能够有效指导AI生成预期图像。\n\n请避免以下常见错误：\n\
+            - 直接字面翻译导致语义不清\n- 遗漏重要描述要素\n- 使用过于复杂或模糊的词汇\n- 包含任何XML标签或特殊符号\n\n输出时只需提供最终的英文prompt，不要包含任何解释或额外信息。\n\
+            </instruction>\n\n<examples>\n<example>\n输入：一只坐在沙发上看书的橘猫，温暖的阳光从窗户照进来\n\
+            输出：A ginger cat sitting on a cozy sofa reading a book, warm sunlight streaming\
+            \ through the window, soft shadows, warm color palette, peaceful atmosphere,\
+            \ highly detailed fur texture, realistic lighting, 4K resolution, ultra-detailed,\
+            \ photorealistic style\n</example>\n\n<example>\n输入：未来城市夜景，霓虹灯光，赛博朋克风格\n\
+            输出：Futuristic cityscape at night, neon lights glowing in the rain, cyberpunk\
+            \ style, towering skyscrapers with holographic advertisements, bustling\
+            \ streets with flying cars, vibrant pink and blue color scheme, cinematic\
+            \ lighting, highly detailed, 8K resolution, Blade Runner inspired atmosphere\n\
+            </example>\n\n<example>\n输入：童话风格的小女孩在魔法森林中探险\n输出：A little girl exploring"
+        - id: c64f8b27-42f1-4d34-b057-7202ed38ec6d
+          role: user
+          text: 请帮我扩写这段提示词{{#1742805567912.prompt#}}
+        selected: false
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1742809068413'
+      position:
+        x: 334
+        y: 270.5
+      positionAbsolute:
+        x: 334
+        y: 270.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 126.74786631646174
+      y: 23.877578177818606
+      zoom: 0.923655537541026
