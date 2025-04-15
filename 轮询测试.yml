@@ -1,0 +1,1160 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 轮询测试
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.5@fd6efd37c2a931911de8ab9ca3ba2da303bef146d45ee87ad896b04b36d09403
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables:
+  - description: 用户的工作
+    id: be290293-3d7b-46f7-9584-8ab7a1a29271
+    name: user_work
+    selector:
+    - conversation
+    - user_work
+    value: ''
+    value_type: string
+  - description: 用户的性别
+    id: e036d6b6-91cd-4a09-a4c1-6dac1fbf858e
+    name: user_sex
+    selector:
+    - conversation
+    - user_sex
+    value: ''
+    value_type: string
+  - description: 用户的年龄
+    id: cb48a597-3e6d-4d63-9d15-87f482ff8825
+    name: user_age
+    selector:
+    - conversation
+    - user_age
+    value: ''
+    value_type: string
+  - description: 用户的姓名
+    id: 9119e39d-d442-4e34-b001-a139beb55952
+    name: user_name
+    selector:
+    - conversation
+    - user_name
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1744637973589-source-1744638212054-target
+      selected: false
+      source: '1744637973589'
+      sourceHandle: source
+      target: '1744638212054'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1744637931894-source-1744639588054-target
+      selected: false
+      source: '1744637931894'
+      sourceHandle: source
+      target: '1744639588054'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744685164562-true-1744685203396-target
+      selected: false
+      source: '1744685164562'
+      sourceHandle: 'true'
+      target: '1744685203396'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744685164562-a63e139e-720e-404d-a08f-249648a36527-1744685204953-target
+      selected: false
+      source: '1744685164562'
+      sourceHandle: a63e139e-720e-404d-a08f-249648a36527
+      target: '1744685204953'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744685164562-ee1b76e9-40c7-4c4f-b1f5-536ad792e66e-1744685206528-target
+      selected: false
+      source: '1744685164562'
+      sourceHandle: ee1b76e9-40c7-4c4f-b1f5-536ad792e66e
+      target: '1744685206528'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744685164562-a99785f0-399c-4d33-901b-7df5207db10e-1744685208274-target
+      selected: false
+      source: '1744685164562'
+      sourceHandle: a99785f0-399c-4d33-901b-7df5207db10e
+      target: '1744685208274'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1744685203396-source-1744685365067-target
+      selected: false
+      source: '1744685203396'
+      sourceHandle: source
+      target: '1744685365067'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1744685204953-source-1744685369315-target
+      selected: false
+      source: '1744685204953'
+      sourceHandle: source
+      target: '1744685369315'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1744685206528-source-1744685374299-target
+      selected: false
+      source: '1744685206528'
+      sourceHandle: source
+      target: '1744685374299'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: assigner
+      id: 1744685208274-source-1744685376327-target
+      selected: false
+      source: '1744685208274'
+      sourceHandle: source
+      target: '1744685376327'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1744639588054-true-1744637973589-target
+      selected: false
+      source: '1744639588054'
+      sourceHandle: 'true'
+      target: '1744637973589'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1744638212054-source-1744685164562-target
+      selected: false
+      source: '1744638212054'
+      sourceHandle: source
+      target: '1744685164562'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: assigner
+        targetType: llm
+      id: 1744685365067-source-1744685891208-target
+      selected: false
+      source: '1744685365067'
+      sourceHandle: source
+      target: '1744685891208'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: llm
+      id: 1744685369315-source-1744685891208-target
+      selected: false
+      source: '1744685369315'
+      sourceHandle: source
+      target: '1744685891208'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: llm
+      id: 1744685374299-source-1744685891208-target
+      selected: false
+      source: '1744685374299'
+      sourceHandle: source
+      target: '1744685891208'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: llm
+      id: 1744685376327-source-1744685891208-target
+      selected: false
+      source: '1744685376327'
+      sourceHandle: source
+      target: '1744685891208'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1744639588054-false-1744685164562-target
+      selected: false
+      source: '1744639588054'
+      sourceHandle: 'false'
+      target: '1744685164562'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: 1744685891208-source-1744688628862-target
+      source: '1744685891208'
+      sourceHandle: source
+      target: '1744688628862'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1744688628862-true-1744685907039-target
+      source: '1744688628862'
+      sourceHandle: 'true'
+      target: '1744685907039'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744688628862-false-1744688754327-target
+      source: '1744688628862'
+      sourceHandle: 'false'
+      target: '1744688754327'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1744688754327-source-1744688757345-target
+      source: '1744688754327'
+      sourceHandle: source
+      target: '1744688757345'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744685164562-false-1744688754327-target
+      source: '1744685164562'
+      sourceHandle: 'false'
+      target: '1744688754327'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 53
+      id: '1744637931894'
+      position:
+        x: 23.781781690741923
+        y: 457.6207225233089
+      positionAbsolute:
+        x: 23.781781690741923
+        y: 457.6207225233089
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: '请从用户的输入中提取信息：
+
+          用户的名字
+
+          用户的年龄
+
+          用户的性别
+
+          用户的工作'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 用户的名字
+          name: name
+          required: false
+          type: string
+        - description: 用户的年龄
+          name: age
+          required: false
+          type: string
+        - description: 用户的性别
+          name: sex
+          required: false
+          type: string
+        - description: 用户的工作
+          name: work
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744637973589'
+      position:
+        x: 638
+        y: 334.5
+      positionAbsolute:
+        x: 638
+        y: 334.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744637973589'
+          - age
+          variable_selector:
+          - conversation
+          - user_age
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744637973589'
+          - name
+          variable_selector:
+          - conversation
+          - user_name
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744637973589'
+          - sex
+          variable_selector:
+          - conversation
+          - user_sex
+          write_mode: over-write
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744637973589'
+          - work
+          variable_selector:
+          - conversation
+          - user_work
+          write_mode: over-write
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 171
+      id: '1744638212054'
+      position:
+        x: 929.5635633814838
+        y: 334.5
+      positionAbsolute:
+        x: 929.5635633814838
+        y: 334.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 618fb596-048a-4e1d-9af0-69b722b4f33a
+            value: '0'
+            varType: number
+            variable_selector:
+            - sys
+            - dialogue_count
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 3
+        type: if-else
+      height: 125
+      id: '1744639588054'
+      position:
+        x: 332.7563563381484
+        y: 457.6207225233089
+      positionAbsolute:
+        x: 332.7563563381484
+        y: 457.6207225233089
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: d0d3d2cd-fc9b-4ee6-a305-17b4cd653e66
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_work
+          id: 'true'
+          logical_operator: and
+        - case_id: a63e139e-720e-404d-a08f-249648a36527
+          conditions:
+          - comparison_operator: empty
+            id: dd71ad55-109d-4f33-a72d-593739cf9d28
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_sex
+          id: a63e139e-720e-404d-a08f-249648a36527
+          logical_operator: and
+        - case_id: ee1b76e9-40c7-4c4f-b1f5-536ad792e66e
+          conditions:
+          - comparison_operator: empty
+            id: 2081fb58-89de-4c41-bb42-ad3d56b97e72
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_age
+          id: ee1b76e9-40c7-4c4f-b1f5-536ad792e66e
+          logical_operator: and
+        - case_id: a99785f0-399c-4d33-901b-7df5207db10e
+          conditions:
+          - comparison_operator: empty
+            id: 7a2847f5-62f0-45c5-a9dd-e25877b3469e
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_name
+          id: a99785f0-399c-4d33-901b-7df5207db10e
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 5
+        type: if-else
+      height: 269
+      id: '1744685164562'
+      position:
+        x: 1223.3656853543007
+        y: 624.0202444790538
+      positionAbsolute:
+        x: 1223.3656853543007
+        y: 624.0202444790538
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 68334a11-44da-4a5a-a5bc-b0bb3925dc8c
+          role: system
+          text: '<instruction>
+
+            1.从聊天记录中提取用户提到的工作信息
+
+            2.如果用户在多条聊天记录中提到工作信息，提取最新一条记录中的工作信息
+
+            3.如果聊天记录中没有提到用户的工作信息，则输出null
+
+            4.输出结果时不要包含任何XML标签
+
+
+            注意：
+
+            -确保提取的是用户明确提到的工作信息
+
+            -如果没有提到自身工作信息，则输出null
+
+            -确保输出的格式清晰且便于理解
+
+            <instruction>'
+        selected: false
+        title: LLM 3
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744685203396'
+      position:
+        x: 1550
+        y: 334.5
+      positionAbsolute:
+        x: 1550
+        y: 334.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 01ea7167-aaff-473e-9e3c-6c50f142b494
+          role: system
+          text: '<instruction>
+
+            1.从聊天记录中提取用户提到的性别信息
+
+            2.如果用户在多条聊天记录中提到性别信息，提取最新一条记录中的性别信息
+
+            3.如果聊天记录中没有提到用户的性别信息，则输出null
+
+            4.输出结果时不要包含任何XML标签
+
+
+            注意：
+
+            -确保提取的是用户明确提到的性别信息
+
+            -如果没有提到自身性别信息，则输出null
+
+            -确保输出的格式清晰且便于理解
+
+            <instruction>'
+        selected: false
+        title: LLM 4
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744685204953'
+      position:
+        x: 1550
+        y: 463.5
+      positionAbsolute:
+        x: 1550
+        y: 463.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 7f2e154c-59d1-4726-92c5-1e204014427e
+          role: system
+          text: '<instruction>
+
+            1.从聊天记录中提取用户提到的年龄信息
+
+            2.如果用户在多条聊天记录中提到年龄信息，提取最新一条记录中的年龄信息
+
+            3.如果聊天记录中没有提到用户的年龄信息，则输出null
+
+            4.输出结果时不要包含任何XML标签
+
+
+            注意：
+
+            -确保提取的是用户明确提到的年龄信息
+
+            -如果没有提到自身年龄信息，则输出null
+
+            -确保输出的格式清晰且便于理解
+
+            <instruction>'
+        selected: false
+        title: LLM 5
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744685206528'
+      position:
+        x: 1550
+        y: 592.5
+      positionAbsolute:
+        x: 1550
+        y: 592.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: c7e2ce14-776b-4ac2-bf25-b96e81a9da6d
+          role: system
+          text: '<instruction>
+
+            1.从聊天记录中提取用户提到的姓名信息
+
+            2.如果用户在多条聊天记录中提到姓名信息，提取最新一条记录中的姓名信息
+
+            3.如果聊天记录中没有提到用户的姓名信息，则输出null
+
+            4.输出结果时不要包含任何XML标签
+
+
+            注意：
+
+            -确保提取的是用户明确提到的姓名信息
+
+            -如果没有提到自身姓名信息，则输出null
+
+            -确保输出的格式清晰且便于理解
+
+            <instruction>'
+        selected: false
+        title: LLM 6
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744685208274'
+      position:
+        x: 1550
+        y: 721.5
+      positionAbsolute:
+        x: 1550
+        y: 721.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744685203396'
+          - text
+          variable_selector:
+          - conversation
+          - user_work
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 3
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1744685365067'
+      position:
+        x: 1854
+        y: 334.5
+      positionAbsolute:
+        x: 1854
+        y: 334.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744685204953'
+          - text
+          variable_selector:
+          - conversation
+          - user_sex
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 4
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1744685369315'
+      position:
+        x: 1854
+        y: 463.5
+      positionAbsolute:
+        x: 1854
+        y: 463.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744685206528'
+          - text
+          variable_selector:
+          - conversation
+          - user_age
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 5
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1744685374299'
+      position:
+        x: 1854
+        y: 592.5
+      positionAbsolute:
+        x: 1854
+        y: 592.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1744685208274'
+          - text
+          variable_selector:
+          - conversation
+          - user_name
+          write_mode: over-write
+        selected: false
+        title: 变量赋值 6
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1744685376327'
+      position:
+        x: 1854
+        y: 721.5
+      positionAbsolute:
+        x: 1854
+        y: 721.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: e92d702a-3570-45ea-beaa-d33cf9a4804a
+          role: system
+          text: '<instruction>
+
+            1.接收输入的{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}变量、
+
+            2.检查每个变量是否为空值。
+
+            3.如果{{#conversation.user_work#}}为空，则提醒用户提供工作信息
+
+            4.如果{{#conversation.user_sex#}}为空，则提醒用户提供性别信息
+
+            5.如果{{#conversation.user_age#}}为空，则提醒用户提供年龄信息
+
+            6.如果{{#conversation.user_name#}}为空，则提醒用户提供姓名信息
+
+            <instruction>'
+        - id: 859b8900-39bc-462f-ab53-a5aa9db1e83f
+          role: user
+          text: '{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}'
+        selected: false
+        title: LLM 7
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744685891208'
+      position:
+        x: 2158
+        y: 463.5
+      positionAbsolute:
+        x: 2158
+        y: 463.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1744685891208.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 104
+      id: '1744685907039'
+      position:
+        x: 2996.6056919251296
+        y: 435.2942650055645
+      positionAbsolute:
+        x: 2996.6056919251296
+        y: 435.2942650055645
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: d11c08bc-3d2b-420b-88d4-e80b520fe48a
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_work
+          - comparison_operator: empty
+            id: c0bf3eee-d5f9-4186-a77b-739ee03d6418
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_sex
+          - comparison_operator: empty
+            id: 536cf212-2636-43d2-ae62-130b97656e00
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_age
+          - comparison_operator: empty
+            id: 6a920920-8d5c-424c-ae8d-ba3facfb827c
+            value: ''
+            varType: string
+            variable_selector:
+            - conversation
+            - user_name
+          - comparison_operator: contains
+            id: 3e03f151-397f-4624-8c6c-4c07cb5a244e
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_work
+          - comparison_operator: contains
+            id: 7525ec98-cc82-4d01-86fc-904550e54771
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_sex
+          - comparison_operator: contains
+            id: 1eb3f234-1c3d-4e4a-8413-fdc9c46e9004
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_age
+          - comparison_operator: contains
+            id: 7f5c458a-a0bc-49d7-8961-760d0f8753fc
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_name
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: 条件分支 3
+        type: if-else
+      height: 307
+      id: '1744688628862'
+      position:
+        x: 2448.276137074685
+        y: 457.6207225233089
+      positionAbsolute:
+        x: 2448.276137074685
+        y: 457.6207225233089
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 54c9d3e7-c607-42af-8bc4-f8a4ddfbdbd4
+          role: system
+          text: '1'
+        selected: false
+        title: LLM 7
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1744688754327'
+      position:
+        x: 2543.3041470330995
+        y: 1027.2042523105918
+      positionAbsolute:
+        x: 2543.3041470330995
+        y: 1027.2042523105918
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1744688754327.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 104
+      id: '1744688757345'
+      position:
+        x: 2911.3041470330995
+        y: 1027.2042523105918
+      positionAbsolute:
+        x: 2911.3041470330995
+        y: 1027.2042523105918
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -465.4719969235291
+      y: -44.347757302990544
+      zoom: 0.574349177498518
