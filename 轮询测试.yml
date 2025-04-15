@@ -246,55 +246,6 @@ workflow:
       type: custom
       zIndex: 0
     - data:
-        isInIteration: false
-        isInLoop: false
-        sourceType: assigner
-        targetType: llm
-      id: 1744685365067-source-1744685891208-target
-      selected: false
-      source: '1744685365067'
-      sourceHandle: source
-      target: '1744685891208'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: assigner
-        targetType: llm
-      id: 1744685369315-source-1744685891208-target
-      selected: false
-      source: '1744685369315'
-      sourceHandle: source
-      target: '1744685891208'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: assigner
-        targetType: llm
-      id: 1744685374299-source-1744685891208-target
-      selected: false
-      source: '1744685374299'
-      sourceHandle: source
-      target: '1744685891208'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: assigner
-        targetType: llm
-      id: 1744685376327-source-1744685891208-target
-      selected: false
-      source: '1744685376327'
-      sourceHandle: source
-      target: '1744685891208'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
         isInLoop: false
         sourceType: if-else
         targetType: if-else
@@ -303,29 +254,6 @@ workflow:
       source: '1744639588054'
       sourceHandle: 'false'
       target: '1744685164562'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInIteration: false
-        isInLoop: false
-        sourceType: llm
-        targetType: if-else
-      id: 1744685891208-source-1744688628862-target
-      source: '1744685891208'
-      sourceHandle: source
-      target: '1744688628862'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: if-else
-        targetType: answer
-      id: 1744688628862-true-1744685907039-target
-      source: '1744688628862'
-      sourceHandle: 'true'
-      target: '1744685907039'
       targetHandle: target
       type: custom
       zIndex: 0
@@ -355,6 +283,72 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1744685365067-source-1744688628862-target
+      source: '1744685365067'
+      sourceHandle: source
+      target: '1744688628862'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1744685369315-source-1744688628862-target
+      source: '1744685369315'
+      sourceHandle: source
+      target: '1744688628862'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1744685374299-source-1744688628862-target
+      source: '1744685374299'
+      sourceHandle: source
+      target: '1744688628862'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1744685376327-source-1744688628862-target
+      source: '1744685376327'
+      sourceHandle: source
+      target: '1744688628862'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1744688628862-true-17447080083260-target
+      source: '1744688628862'
+      sourceHandle: 'true'
+      target: '17447080083260'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 17447080083260-source-1744685907039-target
+      source: '17447080083260'
+      sourceHandle: source
+      target: '1744685907039'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
         sourceType: if-else
         targetType: llm
       id: 1744685164562-false-1744688754327-target
@@ -374,11 +368,11 @@ workflow:
       height: 53
       id: '1744637931894'
       position:
-        x: 23.781781690741923
-        y: 457.6207225233089
+        x: 55.416096336441115
+        y: 443.8977604638304
       positionAbsolute:
-        x: 23.781781690741923
-        y: 457.6207225233089
+        x: 55.416096336441115
+        y: 443.8977604638304
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -423,7 +417,7 @@ workflow:
         - query
         reasoning_mode: prompt
         selected: false
-        title: 参数提取器
+        title: 第一次总体信息采集
         type: parameter-extractor
         variables: []
         vision:
@@ -431,10 +425,10 @@ workflow:
       height: 89
       id: '1744637973589'
       position:
-        x: 638
+        x: 609.2718314112279
         y: 334.5
       positionAbsolute:
-        x: 638
+        x: 609.2718314112279
         y: 334.5
       selected: false
       sourcePosition: right
@@ -481,16 +475,16 @@ workflow:
           - user_work
           write_mode: over-write
         selected: false
-        title: 变量赋值
+        title: 用户信息第一次录入
         type: assigner
         version: '2'
       height: 171
       id: '1744638212054'
       position:
-        x: 929.5635633814838
+        x: 895.6120914129349
         y: 334.5
       positionAbsolute:
-        x: 929.5635633814838
+        x: 895.6120914129349
         y: 334.5
       selected: false
       sourcePosition: right
@@ -512,16 +506,16 @@ workflow:
           logical_operator: and
         desc: ''
         selected: false
-        title: 条件分支 3
+        title: 首轮信息采集分离
         type: if-else
       height: 125
       id: '1744639588054'
       position:
-        x: 332.7563563381484
-        y: 457.6207225233089
+        x: 331.8506557372109
+        y: 443.8977604638304
       positionAbsolute:
-        x: 332.7563563381484
-        y: 457.6207225233089
+        x: 331.8506557372109
+        y: 443.8977604638304
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -538,8 +532,15 @@ workflow:
             variable_selector:
             - conversation
             - user_work
+          - comparison_operator: is
+            id: 3883a3e9-ac31-4e7d-83a5-b6227c92a50f
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_work
           id: 'true'
-          logical_operator: and
+          logical_operator: or
         - case_id: a63e139e-720e-404d-a08f-249648a36527
           conditions:
           - comparison_operator: empty
@@ -549,8 +550,15 @@ workflow:
             variable_selector:
             - conversation
             - user_sex
+          - comparison_operator: is
+            id: 701efd1a-fafe-49f9-8973-036bd15ebb1f
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_sex
           id: a63e139e-720e-404d-a08f-249648a36527
-          logical_operator: and
+          logical_operator: or
         - case_id: ee1b76e9-40c7-4c4f-b1f5-536ad792e66e
           conditions:
           - comparison_operator: empty
@@ -560,8 +568,15 @@ workflow:
             variable_selector:
             - conversation
             - user_age
+          - comparison_operator: is
+            id: 28f3d9d5-ed77-42b9-94c3-e71aeda562ec
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_age
           id: ee1b76e9-40c7-4c4f-b1f5-536ad792e66e
-          logical_operator: and
+          logical_operator: or
         - case_id: a99785f0-399c-4d33-901b-7df5207db10e
           conditions:
           - comparison_operator: empty
@@ -571,20 +586,27 @@ workflow:
             variable_selector:
             - conversation
             - user_name
+          - comparison_operator: is
+            id: f13a6c4c-e945-4304-8b63-f70e1f5d6d00
+            value: 'null'
+            varType: string
+            variable_selector:
+            - conversation
+            - user_name
           id: a99785f0-399c-4d33-901b-7df5207db10e
-          logical_operator: and
+          logical_operator: or
         desc: ''
         selected: false
-        title: 条件分支 5
+        title: 判断缺少信息
         type: if-else
-      height: 269
+      height: 373
       id: '1744685164562'
       position:
-        x: 1223.3656853543007
-        y: 624.0202444790538
+        x: 1173.3820441837436
+        y: 524.2613369232814
       positionAbsolute:
-        x: 1223.3656853543007
-        y: 624.0202444790538
+        x: 1173.3820441837436
+        y: 524.2613369232814
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -633,7 +655,7 @@ workflow:
 
             <instruction>'
         selected: false
-        title: LLM 3
+        title: 用户工作信息缺失
         type: llm
         variables: []
         vision:
@@ -642,10 +664,10 @@ workflow:
       id: '1744685203396'
       position:
         x: 1550
-        y: 334.5
+        y: 375.4047452339596
       positionAbsolute:
         x: 1550
-        y: 334.5
+        y: 375.4047452339596
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -694,7 +716,7 @@ workflow:
 
             <instruction>'
         selected: false
-        title: LLM 4
+        title: 用户性别信息缺失
         type: llm
         variables: []
         vision:
@@ -703,10 +725,10 @@ workflow:
       id: '1744685204953'
       position:
         x: 1550
-        y: 463.5
+        y: 484.61212657236626
       positionAbsolute:
         x: 1550
-        y: 463.5
+        y: 484.61212657236626
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -755,7 +777,7 @@ workflow:
 
             <instruction>'
         selected: false
-        title: LLM 5
+        title: 用户年龄信息缺失
         type: llm
         variables: []
         vision:
@@ -764,10 +786,10 @@ workflow:
       id: '1744685206528'
       position:
         x: 1550
-        y: 592.5
+        y: 597.7780316430916
       positionAbsolute:
         x: 1550
-        y: 592.5
+        y: 597.7780316430916
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -816,7 +838,7 @@ workflow:
 
             <instruction>'
         selected: false
-        title: LLM 6
+        title: 用户姓名信息缺失
         type: llm
         variables: []
         vision:
@@ -825,10 +847,10 @@ workflow:
       id: '1744685208274'
       position:
         x: 1550
-        y: 721.5
+        y: 699.0683655168609
       positionAbsolute:
         x: 1550
-        y: 721.5
+        y: 699.0683655168609
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -847,17 +869,17 @@ workflow:
           - user_work
           write_mode: over-write
         selected: false
-        title: 变量赋值 3
+        title: 工作信息录入
         type: assigner
         version: '2'
       height: 87
       id: '1744685365067'
       position:
         x: 1854
-        y: 334.5
+        y: 375.4047452339596
       positionAbsolute:
         x: 1854
-        y: 334.5
+        y: 375.4047452339596
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -876,17 +898,17 @@ workflow:
           - user_sex
           write_mode: over-write
         selected: false
-        title: 变量赋值 4
+        title: 性别信息录入
         type: assigner
         version: '2'
       height: 87
       id: '1744685369315'
       position:
         x: 1854
-        y: 463.5
+        y: 484.61212657236626
       positionAbsolute:
         x: 1854
-        y: 463.5
+        y: 484.61212657236626
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -905,17 +927,17 @@ workflow:
           - user_age
           write_mode: over-write
         selected: false
-        title: 变量赋值 5
+        title: 年龄信息录入
         type: assigner
         version: '2'
       height: 87
       id: '1744685374299'
       position:
         x: 1854
-        y: 592.5
+        y: 597.7780316430916
       positionAbsolute:
         x: 1854
-        y: 592.5
+        y: 597.7780316430916
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -934,88 +956,37 @@ workflow:
           - user_name
           write_mode: over-write
         selected: false
-        title: 变量赋值 6
+        title: 姓名信息录入
         type: assigner
         version: '2'
       height: 87
       id: '1744685376327'
       position:
         x: 1854
-        y: 721.5
+        y: 699.0683655168609
       positionAbsolute:
         x: 1854
-        y: 721.5
+        y: 699.0683655168609
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     - data:
-        context:
-          enabled: false
-          variable_selector: []
-        desc: ''
-        model:
-          completion_params:
-            temperature: 0.7
-          mode: chat
-          name: deepseek-chat
-          provider: langgenius/deepseek/deepseek
-        prompt_template:
-        - id: e92d702a-3570-45ea-beaa-d33cf9a4804a
-          role: system
-          text: '<instruction>
-
-            1.接收输入的{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}变量、
-
-            2.检查每个变量是否为空值。
-
-            3.如果{{#conversation.user_work#}}为空，则提醒用户提供工作信息
-
-            4.如果{{#conversation.user_sex#}}为空，则提醒用户提供性别信息
-
-            5.如果{{#conversation.user_age#}}为空，则提醒用户提供年龄信息
-
-            6.如果{{#conversation.user_name#}}为空，则提醒用户提供姓名信息
-
-            <instruction>'
-        - id: 859b8900-39bc-462f-ab53-a5aa9db1e83f
-          role: user
-          text: '{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}'
-        selected: false
-        title: LLM 7
-        type: llm
-        variables: []
-        vision:
-          enabled: false
-      height: 89
-      id: '1744685891208'
-      position:
-        x: 2158
-        y: 463.5
-      positionAbsolute:
-        x: 2158
-        y: 463.5
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 244
-    - data:
-        answer: '{{#1744685891208.text#}}'
+        answer: '{{#17447080083260.text#}}'
         desc: ''
         selected: false
-        title: 直接回复 3
+        title: 用户提醒
         type: answer
         variables: []
       height: 104
       id: '1744685907039'
       position:
-        x: 2996.6056919251296
-        y: 435.2942650055645
+        x: 2802.60569192513
+        y: 462.5
       positionAbsolute:
-        x: 2996.6056919251296
-        y: 435.2942650055645
+        x: 2802.60569192513
+        y: 462.5
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1053,28 +1024,28 @@ workflow:
             variable_selector:
             - conversation
             - user_name
-          - comparison_operator: contains
+          - comparison_operator: is
             id: 3e03f151-397f-4624-8c6c-4c07cb5a244e
             value: 'null'
             varType: string
             variable_selector:
             - conversation
             - user_work
-          - comparison_operator: contains
+          - comparison_operator: is
             id: 7525ec98-cc82-4d01-86fc-904550e54771
             value: 'null'
             varType: string
             variable_selector:
             - conversation
             - user_sex
-          - comparison_operator: contains
+          - comparison_operator: is
             id: 1eb3f234-1c3d-4e4a-8413-fdc9c46e9004
             value: 'null'
             varType: string
             variable_selector:
             - conversation
             - user_age
-          - comparison_operator: contains
+          - comparison_operator: is
             id: 7f5c458a-a0bc-49d7-8961-760d0f8753fc
             value: 'null'
             varType: string
@@ -1085,16 +1056,16 @@ workflow:
           logical_operator: or
         desc: ''
         selected: false
-        title: 条件分支 3
+        title: 信息完整性再判断
         type: if-else
       height: 307
       id: '1744688628862'
       position:
-        x: 2448.276137074685
-        y: 457.6207225233089
+        x: 2231.554168717777
+        y: 431.5000000000001
       positionAbsolute:
-        x: 2448.276137074685
-        y: 457.6207225233089
+        x: 2231.554168717777
+        y: 431.5000000000001
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1114,9 +1085,27 @@ workflow:
         prompt_template:
         - id: 54c9d3e7-c607-42af-8bc4-f8a4ddfbdbd4
           role: system
-          text: '1'
+          text: "```xml\n<instruction>\n这是一个用户的个人信息录入系统，用户已经录入了所有的用户信息，请根据提供的变量总结用户的信息，并生成一张个人信息表，用幽默的语句表达。以下是具体的步骤和要求：\n\
+            \n1. **提取变量**：从输入中提取用户的姓名、年龄、性别、职业等信息。\n2. **总结信息**：将这些信息整合成一段简洁的总结，突出用户的特点。\n\
+            3. **生成表格**：以表格形式展示用户的个人信息，表格需包含“项目”和“内容”两列。\n4. **幽默表达**：在总结或表格中加入幽默的语句或调侃，让输出更生动有趣。\n\
+            5. **格式要求**：输出为纯文本，不要包含任何XML标签或标记语言。\n\n请确保输出的内容清晰、有趣，且易于阅读。以下是三个示例供参考：\n\
+            </instruction>\n\n<examples>\n<example>\n输入：\n姓名：张三\n年龄：28\n性别：男\n职业：程序员\n\
+            \n输出：\n【张三的个人信息表】  \n这位28岁的“代码狂魔”张三先生，性别男，职业是程序员（没错，就是那种和键盘谈恋爱的人）。以下是他的详细信息：\n\
+            \n| 项目       | 内容                  |\n|------------|-----------------------|\n\
+            | 姓名       | 张三                  |\n| 年龄       | 28（正值脱发高峰期）  |\n| 性别\
+            \       | 男                    |\n| 职业       | 程序员（Debug高手）   |\n</example>\n\
+            \n<example>\n输入：\n姓名：李四\n年龄：35\n性别：女\n职业：教师\n\n输出：\n【李四的个人信息表】  \n李四女士，35岁，性别女，职业是教师（每天和熊孩子们斗智斗勇的英雄）。以下是她的详细信息：\n\
+            \n| 项目       | 内容                  |\n|------------|-----------------------|\n\
+            | 姓名       | 李四                  |\n| 年龄       | 35（智慧与颜值并存）  |\n| 性别\
+            \       | 女                    |\n| 职业       | 教师（灵魂工程师）    |\n</example>\n\
+            \n<example>\n输入：\n姓名：王五\n年龄：22\n性别：男\n职业：学生\n\n输出：\n【王五的个人信息表】  \n王五同学，22岁，性别男，职业是学生（目前主要任务是熬夜和赶Deadline）。以下是他的详细信息：\n\
+            \n| 项目       | 内容                  |\n|------------|-----------------------|\n\
+            | 姓名       | "
+        - id: 3996ecad-7e66-45b6-a861-e8adffd0b532
+          role: user
+          text: '{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}'
         selected: false
-        title: LLM 7
+        title: 用户信息综合
         type: llm
         variables: []
         vision:
@@ -1124,11 +1113,11 @@ workflow:
       height: 89
       id: '1744688754327'
       position:
-        x: 2543.3041470330995
-        y: 1027.2042523105918
+        x: 2727.277972003272
+        y: 851.0102380247358
       positionAbsolute:
-        x: 2543.3041470330995
-        y: 1027.2042523105918
+        x: 2727.277972003272
+        y: 851.0102380247358
       selected: true
       sourcePosition: right
       targetPosition: left
@@ -1138,23 +1127,91 @@ workflow:
         answer: '{{#1744688754327.text#}}'
         desc: ''
         selected: false
-        title: 直接回复 2
+        title: 表格生成
         type: answer
         variables: []
       height: 104
       id: '1744688757345'
       position:
-        x: 2911.3041470330995
-        y: 1027.2042523105918
+        x: 3040.9575414003943
+        y: 851.0102380247358
       positionAbsolute:
-        x: 2911.3041470330995
-        y: 1027.2042523105918
+        x: 3040.9575414003943
+        y: 851.0102380247358
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: e92d702a-3570-45ea-beaa-d33cf9a4804a
+          role: system
+          text: '<instruction>
+
+            1.接收输入的{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}变量、
+
+            2.检查每个变量是否为空值。
+
+            我们将以轮询的方式请求用户输入信息请根据{{#conversation.user_work#}}->{{#conversation.user_sex#}}->{{#conversation.user_age#}}->{{#conversation.user_name#}}这样的顺序逐一进行询问
+
+            3.如果{{#conversation.user_work#}}为空，则提醒用户提供工作信息
+
+            如果已经有信息，则按照顺序询问下一项：用户性别
+
+            4.如果{{#conversation.user_sex#}}为空，则提醒用户提供性别信息
+
+            如果已经有信息，则按照顺序询问下一项：用户年龄
+
+            5.如果{{#conversation.user_age#}}为空，则提醒用户提供年龄信息
+
+            如果已经有信息，则按照顺序询问下一项：用户姓名
+
+            6.如果{{#conversation.user_name#}}为空，则提醒用户提供姓名信息
+
+            如果已经有信息，则将全部信息输出
+
+
+            注意：
+
+            1.我们将以轮询的方式请求用户输入信息请根据{{#conversation.user_work#}}->{{#conversation.user_sex#}}->{{#conversation.user_age#}}->{{#conversation.user_name#}}这样的顺序逐一进行询问
+
+            2.每次只询问一种信息
+
+            <instruction>'
+        - id: 859b8900-39bc-462f-ab53-a5aa9db1e83f
+          role: user
+          text: '{{#conversation.user_work#}}{{#conversation.user_sex#}}{{#conversation.user_age#}}{{#conversation.user_name#}}'
+        selected: false
+        title: 缺少信息判断
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '17447080083260'
+      position:
+        x: 2521.9129656760097
+        y: 462.5
+      positionAbsolute:
+        x: 2521.9129656760097
+        y: 462.5
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -465.4719969235291
-      y: -44.347757302990544
-      zoom: 0.574349177498518
+      x: -114.87313899697233
+      y: 45.575259249950136
+      zoom: 0.43527528164806245
